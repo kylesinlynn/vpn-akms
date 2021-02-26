@@ -12,4 +12,5 @@ Route::get('/', function () {
 
 Route::resource('/register',UserController::class);
 Route::resource('/page',PageController::class);
-Route::resource('/login',LoginController::class);
+Route::get('/login',[LoginController::class,'index'])->name('login.index');
+Route::post('/login',[LoginController::class,'login'])->name('login');
