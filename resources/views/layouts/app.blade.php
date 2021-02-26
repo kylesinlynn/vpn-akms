@@ -15,14 +15,16 @@
 
     <title>MCY - VPN Server List</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.0.1/dist/alpine.js" defer=""></script>
+
 </head>
 
 <body class="bg-gray-50">
-    
-@yield('content')
+        @include('layouts.navbar')
 
-@include('layouts.footer')
-@stack('scripts')
+    @yield('content')
+
+    @include('layouts.footer')
+    @stack('scripts')
 </body>
 </html>
