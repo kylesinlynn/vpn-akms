@@ -40,26 +40,33 @@
 
 </div>
 
-<div id="app">
+<!-- Server List -->
     <div class="flex flex-col items-center mb-5 select-none">
         <!-- VPN Data -->
+        @foreach($servers as $server)
         <div class="bg-white overflow-hidden shadow rounded-lg my-2 w-11/12 p-3 border-2 border-green-500"
             v-for="vpn in vpnList"
             key="vpn.id"
             >
             <div class="grid grid-cols-1 divide-y divide-green-500">
                 <h3 class="text-lg leading-6 font-medium text-gray-700 py-2 select-none">
-                    @{{vpn.serverName}} Server
+                     {{$server->name}}Server
                 </h3>
                 <div class="py-2 text-green-700 font-semibold">
+                    @if($server->status == 1)
                     Active
+                    @else
+                    <span class="text-red-700">
+                        Closed
+                    </span>
+                    @endif
                 </div>
             </div>
             <div class="my-3 overflow-x-auto text-gray-800 bg-green-50 p-3 rounded-xl select-all">
-                @{{vpn.key}}
+                {{$server->key}}
             </div>
         </div>
+        @endforeach
     </div>
-</div>
 
 @endsection

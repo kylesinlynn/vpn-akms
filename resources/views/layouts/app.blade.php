@@ -15,6 +15,7 @@
 
     <title>MCY - VPN Server List</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://tailwindui.com/css/components-v2.css">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.0.1/dist/alpine.js" defer=""></script>
 
 </head>

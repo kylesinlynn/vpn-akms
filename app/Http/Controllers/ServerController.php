@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\CreateServerRequest;
 use App\Models\Server;
-
-class PageController extends Controller
+class ServerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +14,7 @@ class PageController extends Controller
      */
     public function index()
     {
-        // if user is not logged in return '/'
-        if(!Auth::user()){
-            return redirect('/');
-        }
-        $servers = Server::orderByDesc('id')->get();
-        return view('admin.index',compact('servers'));
+        //
     }
 
     /**
@@ -30,7 +24,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        //
+        return view('server.create');
     }
 
     /**
@@ -39,9 +33,14 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateServerRequest $request)
     {
-        //
+        Server::create([
+            'name'=>$request->name,
+            'key'=>$request->key,
+            'status'=>$request->status
+            ]);
+            return redirect()->route('page.index');
     }
 
     /**
@@ -84,8 +83,9 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Server $server)
     {
-        //
+        $server->delete();
+        return redirect()->route('page.index');
     }
 }

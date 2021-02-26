@@ -9,9 +9,6 @@ class LoginController extends Controller
 {
     // Refirect if register is success
     public function index() {
-        if (!Auth::check()) {
-            return redirect('/');
-        }
         return view('admin.login');
     }
     // Login Action
@@ -22,6 +19,8 @@ class LoginController extends Controller
             $request->session()->regenerate();
 
             return redirect()->route('page.index');
+        }else {
+            return redirect()->route('login.index')->with('status','Email Or Password Do not Math.');
         }
     }
 
