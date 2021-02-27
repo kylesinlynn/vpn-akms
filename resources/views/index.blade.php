@@ -8,9 +8,17 @@
             Active VPN  Server List - MCY
         </h3>
         <p class="text-justify mt-2 max-w-4xl text-sm text-gray-600 leading-relaxed">
-            မင်္ဂလာပါခင်ဗျာ။
-            <br>ပထမဦးစွာ Outline Vpn Application မှတစ်ဆင့် ကျန်တော်တို့ Myanmar Cypber Youth (MCY) Team မှ ပြုလုပ်ပေးထားသော Unlimited VPN Server ကို အသုံးပြုပေးကြပေးသည့် User တစ်ယောက်ခြင်းစီတိုင်းကို ကျေးဇူးတင်ပါတယ်ခင်ဗျ။ <br>ယခင်အသုံးပြုခွင့်ပေးထားသော Server Access Key များဟာ ချိတ်ဆက်မရတဲ့ ပြဿနာ တစ်ချို့ရှိခဲ့လို့ အသုံးပြရ အဆင်မပြေဖြစ်ခဲ့တဲ့ အတွက်လဲ ကျန်တော်တို့ MCY Team မှ  တောင်းပန်အပ်ပါတယ်ခင်ဗျာ။ <br>ယခုအခါမှာတော့ ပိုမိုကောင်မွန်များပြားသော Access Key အသစ်များ Singapore Region Key 6 ခု နဲ့ Tokyo Region Key 6 စုစုပေါင်း 12 ခု ပြုလုပ်ပေးထားပါတယ်။ <br>မိမိတို့ကြိုက်နှစ်သက်ရာ key များကို အသုံးပြု၍ လွယ်ကူလျှင်မြန်စွာ အသုံးပြုနိုင်ပါတယ် ခင်ဗျ။
-            <br>End to End User Encrypt စနစ်ကို အသုံးပြုထားလို့ ယုံကြည်စိတ်ချစွာ အသုံးပြုလို့ရပါတယ်။
+            မင်္ဂလာပါ။
+            ကျွန်တော်တို့ MCY (Myanmar Cyber Youth) Team မှ Internet Censor အဖြတ်ခံနေရချိန်တွင် မူရင်းအင်တာနက်မြန်နှုန်းအတိုင်းအသုံးပြုနိုင်ရန် VPN Server များကိုထောက်ပံပေးပေးနေခြင်းဖြစ်ပါတယ်။
+            အသုံးပြုနိုင်သော Server စာရင်းကိုအောက်မှာကြည့်နိုင်ပါတယ်။
+        </p>
+        <p class="text-justify mt-2 max-w-4xl text-sm text-gray-600 leading-relaxed">
+            Server စရိတ်လှူဒါန်းလိုပါက -
+            <br>
+            လူကြီးမင်းအနေနှင့် Server 1 နာရီစရိတ် 0.6$ မှ ကြိုက်နှစ်သက်သည့်ပမာဏအထိ အောက်ပါ ဖုန်းနံပါတ်များသို့လှူဒါန်းနိုင်ပါတယ်။
+<br>
+               <span class="text-gray-800">KPay - 09691497838</span>
+
         </p>
         <!-- Waring -->
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -41,32 +49,32 @@
 </div>
 
 <!-- Server List -->
-    <div class="flex flex-col items-center mb-5 select-none">
-        <!-- VPN Data -->
-        @foreach($servers as $server)
-        <div class="bg-white overflow-hidden shadow rounded-lg my-2 w-11/12 p-3 border-2 border-green-500"
-            v-for="vpn in vpnList"
-            key="vpn.id"
-            >
-            <div class="grid grid-cols-1 divide-y divide-green-500">
-                <h3 class="text-lg leading-6 font-medium text-gray-700 py-2 select-none">
-                     {{$server->name}}Server
-                </h3>
-                <div class="py-2 text-green-700 font-semibold">
-                    @if($server->status == 1)
-                    Active
-                    @else
-                    <span class="text-red-700">
-                        Closed
-                    </span>
-                    @endif
-                </div>
-            </div>
-            <div class="my-3 overflow-x-auto text-gray-800 bg-green-50 p-3 rounded-xl select-all">
-                {{$server->key}}
+<div class="flex flex-col items-center mb-5 select-none">
+    <!-- VPN Data -->
+    @foreach($servers as $server)
+    <div class="bg-white overflow-hidden shadow rounded-lg my-2 w-11/12 p-3 border-2 border-green-500"
+        v-for="vpn in vpnList"
+        key="vpn.id"
+        >
+        <div class="grid grid-cols-1 divide-y divide-green-500">
+            <h3 class="text-lg leading-6 font-medium text-gray-700 py-2 select-none">
+                {{$server->name}}Server
+            </h3>
+            <div class="py-2 text-green-700 font-semibold">
+                @if($server->status == 1)
+                Active
+                @else
+                <span class="text-red-700">
+                    Closed
+                </span>
+                @endif
             </div>
         </div>
-        @endforeach
+        <div class="my-3 overflow-x-auto text-gray-800 bg-green-50 p-3 rounded-xl select-all">
+            {{$server->key}}
+        </div>
     </div>
+    @endforeach
+</div>
 
 @endsection

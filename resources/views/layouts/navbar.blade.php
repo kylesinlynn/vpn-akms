@@ -11,12 +11,28 @@
                         <div class="flex space-x-4">
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                             <a href="/" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                            <a href="https://www.facebook.com/aungmyatmoe834" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact
-                                To Developer
+                            <a href="https://www.facebook.com/106535241160332/posts/215515070262348/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                                အသုံးပြုနည်း
                             </a>
+                            <a href="https://www.facebook.com/MCY197" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">MCY Facebook Page
+                            </a>
+                            <a href="https://www.facebook.com/aungmyatmoe834" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">https://www.facebook.com/aungmyatmoe834
+                            </a>
+                                            <a href="https://github.com/mmcyberyouth/mcy_vpn" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Porject Repo Link
+                </a>
+
+                            @guest
                             <a href="{{route('login.index')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                                 Login
                             </a>
+                            @endguest
+                            
+                            @auth
+                                 <a href="{{route('page.index')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                                Dashboard
+                            </a>
+                            @endauth
                         </div>
                     </div>
                 </div>
@@ -39,16 +55,33 @@
             </div>
         </div>
 
+        <!-- Mobile -->
         <div x-description="Mobile menu, toggle classes based on menu state." x-state:on="Menu open" x-state:off="Menu closed" :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <a href="/" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">
                     Home
                 </a>
+                                            <a href="https://www.facebook.com/106535241160332/posts/215515070262348/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                                အသုံးပြုနည်း
+                            </a>
+
+                <a href="https://www.facebook.com/MCY197" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">MCY Facebook Page
+                </a>
                 <a href="https://www.facebook.com/aungmyatmoe834" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact
                     To Developer
                 </a>
+                <a href="https://github.com/mmcyberyouth/mcy_vpn" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Porject Repo Link
+                </a>
+                
+
+                @guest
                 <a href="{{route('login.index')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
+                @endguest
+                @auth
+                <a href="{{route('page.index')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Admin Dashboard</a>
+                @endauth
             </div>
         </div>
     </nav>

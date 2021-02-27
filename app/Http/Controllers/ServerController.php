@@ -60,9 +60,9 @@ class ServerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Server $server)
     {
-        //
+        return view('server.edit')->with('server',$server);
     }
 
     /**
@@ -72,9 +72,11 @@ class ServerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Server $server)
     {
-        //
+        // Route model binding
+        $server->update($request->only('name','key','status'));
+        return redirect()->route('page.index');
     }
 
     /**
