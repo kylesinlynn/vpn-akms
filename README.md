@@ -17,27 +17,31 @@ and change to Host, Password and DB name of your Host Server.
 php artisan key:generate # Larvael application necessary application key
 php artisan migrate
 ```
-Migration is to create db table to your database.
+Migration is to create db tables to your database.
 And you can launch now.
 
-# Features
+# Do you want to contribute?
 
-Admin Register,Login Logout
-CRUD System 
-Minimal Admin Panel
+## Requirements
 
-# Usage
+- Familiar with Tailwind CSS 
+- Familiar with Laravel PHP Framework and Database ORM architecture
 
-First Register Account at `/register` and it will redirect to `/login` page.
+# Key Features
 
-You will need to login to reach dashboard.
-
-If you reach to the dashboard,you can do CRUD.
+- Admin Login, Logout
+- Minimal Admin Dashboard
+- CRUD Operation 
 
 # Contact To Developer?
 
 https://www.facebook.com/aungmyatmoe834
 
+
 # Website
 
 https://vpn.mcy.asia/
+
+# Created Date
+
+26 Feb 2021 
