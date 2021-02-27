@@ -1,3 +1,4 @@
+[![Laravel](https://github.com/mmcyberyouth/mcy_vpn/actions/workflows/laravel.yml/badge.svg)](https://github.com/mmcyberyouth/mcy_vpn/actions/workflows/laravel.yml)
 # The VPN Servers List Project
 
 This project is open source project.
