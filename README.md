@@ -1,52 +1,43 @@
-[![Laravel](https://github.com/mmcyberyouth/mcy_vpn/actions/workflows/laravel.yml/badge.svg)](https://github.com/mmcyberyouth/mcy_vpn/actions/workflows/laravel.yml)
-# The VPN Servers List Project
+# VPN Key List
 
-This project is open source project.
-
-# Deployment Steps
-
-```bash
-git clone https://github.com/mmcyberyouth/mcy_vpn
-cd mcy_vpn
-composer install # or update
-cp .env.example .env 
-nano .env
-```
-and change to Host, Password and DB name of your Host Server.
-
-```bash
-php artisan key:generate # Larvael application necessary application key
-php artisan migrate
-```
-Migration is to create db tables to your database.
-And you can launch now.
-
-# Do you want to contribute?
+## Installation
+  ```bash
+    git clone https://github.com/cybermm/vpn-key-list vpn-key-list
+    cd vpn-key-list
+    composer install
+    composer setup // create database before setup
+  ```
 
 ## Requirements
 
 - Familiar with Tailwind CSS 
 - Familiar with Laravel PHP Framework and Database ORM architecture
 
+## Maintainers
+The Laravel.io portal is currently maintained by [Aung Myat Moe](https://github.com/amm834) and [Xie Lian](https://github.com/prxilian). If you have any questions please don't hesitate to create an issue on this repo.
+
+## Contributing
+Please read [the contributing guide](CONTRIBUTING.md) before creating an issue or sending in a pull request.
+
+## Code of Conduct
+Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing or engaging in discussions.
+
 ## UI Template
-https://github.com/mmcyberyouth/VPNList_UI
+https://cybermm.github.io/vpn-key-list-ui/
 
 
-# Key Features
+## Key Features
 
 - Admin Login, Logout
 - Minimal Admin Dashboard
 - CRUD Operation 
 
-# Contact To Developer?
-
+## Contact
 https://www.facebook.com/aungmyatmoe834
 
-
-# Website
-
-https://vpn.mcy.asia/
-
-# Created Date
+## Created Date
 
 26 Feb 2021 
+
+## License
+Copyright (c) 2021 Myanmar Cyber Youth released under the [MIT](LICENSE.md) license.
