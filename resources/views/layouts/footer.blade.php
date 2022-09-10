@@ -1,3 +1,1 @@
-    <footer class="text-center py-5 bg-green-600 text-white select-none">
-        &copy; 2021-2022 By MCY Team.
-    </footer>
+<footer class="select-none bg-green-600 py-5 text-center text-white">&copy; 2021-2022 Myanmar Cyber Youth</footer>

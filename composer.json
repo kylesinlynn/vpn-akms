@@ -1,7 +1,7 @@
 {
     "name": "cybermm/vpn-akms",
     "type": "project",
-    "description": "The source code for VPN Access Key Management System.",
+    "description": "The source code for VPN access key management system.",
     "license": "MIT",
     "require": {
         "php": "8.1.*",
@@ -54,9 +54,9 @@
         "setup": [
             "php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
             "php artisan key:generate",
-            "php artisan migrate --seed",
+            "php artisan migrate",
             "npm install",
-            "npm run dev"
+            "npm run build"
         ]
     }
 }
