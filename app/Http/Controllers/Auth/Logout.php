@@ -25,7 +25,9 @@ class Logout extends Controller
             $user->tokens()->delete();
         }
 
-        // redirect to login page
-        return redirect()->route('auth.login');
+        // return the response
+        return response([
+            'message' => 'Logged out!'
+        ], Response::HTTP_ACCEPTED);
     }
 }

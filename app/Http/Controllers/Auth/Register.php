@@ -19,7 +19,7 @@ class Register extends Controller
         // validate the input(s)
         $request->validate([
             'name' => 'nullable|string|max:255',
-            'email' =>  'required|email|unique:user',
+            'email' =>  'required|email|unique:users',
             'password' => 'required|confirmed|min:6'
         ]);
 
@@ -31,6 +31,8 @@ class Register extends Controller
         ]);
 
         // redirect to login page
-        return redirect()->route('auth.login');
+        return response([
+            'message' => 'Registered successfully!',
+        ], Response::HTTP_CREATED);
     }
 }
