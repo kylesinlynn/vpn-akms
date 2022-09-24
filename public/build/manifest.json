@@ -1,0 +1,26 @@
+{
+  "resources/js/assets/images/cover/black-1k.png": {
+    "file": "assets/black-1k.7abd75a4.png",
+    "src": "resources/js/assets/images/cover/black-1k.png"
+  },
+  "resources/js/assets/images/logo/black-1k.png": {
+    "file": "assets/black-1k.9ad0c43c.png",
+    "src": "resources/js/assets/images/logo/black-1k.png"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app.3098cd6e.js",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "css": [
+      "assets/app.81555907.css"
+    ],
+    "assets": [
+      "assets/black-1k.9ad0c43c.png",
+      "assets/black-1k.7abd75a4.png"
+    ]
+  },
+  "resources/js/app.css": {
+    "file": "assets/app.81555907.css",
+    "src": "resources/js/app.css"
+  }
+}
