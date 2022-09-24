@@ -11,6 +11,12 @@ use Symfony\Component\HttpFoundation\Response;
 
 class Login extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+
+
     public function action(Request $request)
     {
 

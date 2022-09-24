@@ -9,6 +9,12 @@ use Symfony\Component\HttpFoundation\Response;
 
 class Logout extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:scantum');
+    }
+
+
     public function action(Request $request)
     {
         // get the authenticated user by email
@@ -19,9 +25,7 @@ class Logout extends Controller
             $user->tokens()->delete();
         }
 
-        // return the response
-        return response([
-            'message' => 'Logged out!'
-        ], Response::HTTP_ACCEPTED);
+        // redirect to login page
+        return redirect()->route('auth.login');
     }
 }

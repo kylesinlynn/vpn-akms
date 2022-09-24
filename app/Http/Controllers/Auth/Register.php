@@ -9,6 +9,11 @@ use Symfony\Component\HttpFoundation\Response;
 
 class Register extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+
     public function action(Request $request)
     {
         // validate the input(s)
@@ -25,9 +30,7 @@ class Register extends Controller
             'password' => $request->password
         ]);
 
-        // return the response
-        return response([
-            'message' => 'Registered successfully!',
-        ], Response::HTTP_CREATED);
+        // redirect to login page
+        return redirect()->route('auth.login');
     }
 }
