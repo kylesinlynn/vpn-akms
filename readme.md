@@ -12,7 +12,7 @@ This is repository for the [@cybermm](https://github.com/cybermm) VPN access key
     git clone https://github.com/cybermm/vpn-akms
     cd vpn-akms
     composer install
-    composer setup // create database before setup
+    composer setup # create database before setup
   ```
 
 ## Maintainers
