@@ -17,7 +17,7 @@ This is repository for the [@cybermm](https://github.com/cybermm) VPN access key
 
 ## Maintainers
 
-This repository is currently maintained by [Aung Myat Moe](https://github.com/amm834) and [Thet Paing Hein](https://github.com/paiakarit).
+This repository is currently maintained by [Aung Myat Moe](https://github.com/amm834) and [Thet Paing Hein](https://github.com/paiakarit), and partially participated by [Kyle Sin Lynn](https://github.com/kylesinlynn).
 
 ## Contributing
 
