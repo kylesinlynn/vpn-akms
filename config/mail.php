@@ -72,11 +72,11 @@ return [
         ],
 
         'failover' => [
-          'transport' => 'failover',
-          'mailers' => [
-              'smtp',
-              'log',
-          ],
+            'transport' => 'failover',
+            'mailers' => [
+                'smtp',
+                'log',
+            ],
         ],
     ],
 

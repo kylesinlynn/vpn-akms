@@ -7,13 +7,12 @@ use App\User;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class Logout extends Controller
+class LogoutController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth:sanctum');
     }
-
 
     public function action(Request $request)
     {
@@ -21,13 +20,13 @@ class Logout extends Controller
         $user = User::where('email', auth()->user()->email)->first();
 
         // if the user exists, delete the user's tokens
-        if ( $user ) {
+        if ($user) {
             $user->tokens()->delete();
         }
 
         // return the response
         return response([
-            'message' => 'Logged out!'
+            'message' => 'Logged out!',
         ], Response::HTTP_ACCEPTED);
     }
 }
