@@ -2,7 +2,6 @@
 import BaseHeader from "./components/BaseHeader.vue";
 import BaseHero from "./components/BaseHero.vue";
 import BaseFooter from "./views/BaseFooter.vue";
-
 const servers = [
   {
     id: 1,
@@ -26,18 +25,18 @@ const servers = [
   <base-header/>
   <base-hero/>
   <!--  server key list -->
-  <main class="overflow-x-auto mt-8 mx-4 md:max-w-4xl md:mx-auto md:mt-12">
+  <main class="mx-4 mt-8 overflow-x-auto md:max-w-4xl md:mx-auto md:mt-12">
     <h2 class="mb-8 text-xl font-bold text-gray-800/90">Access Keys</h2>
 
-    <div class="hidden overflow-x-auto relative shadow-md sm:block sm:rounded-lg">
+    <div class="relative hidden overflow-x-auto shadow-md sm:block sm:rounded-lg">
       <table class="w-full text-sm text-left text-gray-500">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
         <tr>
-          <th scope="col" class="py-3 px-6">Location</th>
-          <th scope="col" class="py-3 px-6">Hosting</th>
-          <th scope="col" class="py-3 px-6">IP Address</th>
-          <th scope="col" class="py-3 px-6">Created At</th>
-          <th scope="col" colspan="2" class="py-3 px-6">Status</th>
+          <th scope="col" class="px-6 py-3">Location</th>
+          <th scope="col" class="px-6 py-3">Hosting</th>
+          <th scope="col" class="px-6 py-3">IP Address</th>
+          <th scope="col" class="px-6 py-3">Created At</th>
+          <th scope="col" colspan="2" class="px-6 py-3">Status</th>
         </tr>
         </thead>
         <tbody>
@@ -46,19 +45,19 @@ const servers = [
             v-for="server in servers"
             :key="server.id"
         >
-          <th scope="row" class="py-4 px-6 text-indigo-500 font-semibold capitalize">
+          <th scope="row" class="px-6 py-4 font-semibold text-indigo-500 capitalize">
             {{ server.location }}
           </th>
-          <td class="py-4 px-6">
+          <td class="px-6 py-4">
             {{ server.hosting }}
           </td>
-          <td class="py-4 px-6">
+          <td class="px-6 py-4">
             {{ server.ip_address }}
           </td>
-          <td class="py-4 px-6">
+          <td class="px-6 py-4">
             {{ server.created_at }}
           </td>
-          <td class="py-4 px-6">
+          <td class="px-6 py-4">
             <span
                 class="font-semibold capitalize"
                 :class="server.status === 'active' ? 'text-indigo-500' : 'text-red-600'"
@@ -67,9 +66,9 @@ const servers = [
               {{ server.status }}
             </span>
           </td>
-          <td class="py-4 px-6">
+          <td class="px-6 py-4">
             <a
-                class="transition-colors ease-out px-5 py-3  text-white font-bold rounded-lg "
+                class="px-5 py-3 font-bold text-white transition-colors ease-out rounded-lg "
                 :class="server.status === 'active' ? 'bg-indigo-500 hover:bg-indigo-600' : 'bg-red-500 hover:bg-red-600'"
                 href="#"
             >Get Key</a>
@@ -81,12 +80,12 @@ const servers = [
     </div>
 
     <!--     show only on mobile -->
-    <div class="overflow-x-auto relative shadow-md sm:hidden  sm:rounded-lg">
+    <div class="relative overflow-x-auto shadow-md sm:hidden sm:rounded-lg">
       <table class="w-full text-sm text-left text-gray-500">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
         <tr>
-          <th scope="col" class="py-3 px-6">Location</th>
-          <th scope="col" class="py-3 px-6 text-center pl-3">Action</th>
+          <th scope="col" class="px-6 py-3">Location</th>
+          <th scope="col" class="px-6 py-3 pl-3 text-center">Action</th>
         </tr>
         </thead>
         <tbody>
@@ -106,7 +105,7 @@ const servers = [
             </span>
 
           </th>
-          <td class="py-4 px-6 text-center">
+          <td class="px-6 py-4 text-center">
             <a
                 class="transition-colors ease-out px-3 py-2.5  text-white font-bold rounded-lg "
                 :class="server.status === 'active' ? 'bg-indigo-500 hover:bg-indigo-600' : 'bg-red-500 hover:bg-red-600'"
