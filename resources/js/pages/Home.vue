@@ -1,8 +1,9 @@
 <script setup>
-    
-import BaseHeader from './components/BaseHeader.vue'
-import BaseHero from './components/BaseHero.vue'
-import BaseFooter from './views/BaseFooter.vue'
+import { Head } from '@inertiajs/inertia-vue3'
+
+import BaseHeader from '../components/BaseHeader.vue'
+import BaseHero from '../components/BaseHero.vue'
+import BaseFooter from '../components/BaseFooter.vue'
 
 const servers = [
     {
@@ -17,16 +18,18 @@ const servers = [
         id: 2,
         location: 'Canada',
         hosting: 'Google LLC',
-        ip_address: '127.0.0.1:8000',
-        created_at: 'Sunday, Sep 11, 2022',
+        ip_address: '127.0.0.1',
+        created_at: 'Sunday, Sep 12, 2022',
         status: 'down',
     },
 ]
 </script>
 
 <template>
-    <base-header />
-    <base-hero />
+    <Head title="Home" />
+    
+    <BaseHeader />
+    <BaseHero />
     
     <!--  server key list -->
     <main class="mx-4 mt-8 overflow-x-auto md:mx-auto md:mt-12 md:max-w-4xl">
@@ -105,5 +108,5 @@ const servers = [
         </div>
     </main>
 
-    <base-footer />
+    <BaseFooter />
 </template>
