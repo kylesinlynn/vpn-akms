@@ -27,17 +27,17 @@ const servers = [
 
 <template>
     <Head title="Home" />
-    
+
     <BaseHeader />
     <BaseHero />
-    
+
     <!--  server key list -->
     <main class="mx-4 mt-8 overflow-x-auto md:mx-auto md:mt-12 md:max-w-4xl">
         <h2 class="mb-8 text-xl font-bold text-gray-800/90">Access Keys</h2>
 
         <div class="relative hidden overflow-x-auto shadow-md sm:block sm:rounded-lg">
-            <table class="w-full text-sm text-left text-gray-500">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+            <table class="w-full text-left text-sm text-gray-500">
+                <thead class="bg-gray-50 text-xs uppercase text-gray-700">
                     <tr>
                         <th scope="col" class="px-6 py-3">Location</th>
                         <th scope="col" class="px-6 py-3">Hosting</th>
@@ -46,33 +46,33 @@ const servers = [
                         <th scope="col" colspan="2" class="px-6 py-3">Status</th>
                     </tr>
                 </thead>
-                
+
                 <tbody>
-                    <tr class="bg-white border-b" v-for="server in servers" :key="server.id">
-                        <th scope="row" class="px-6 py-4 font-semibold text-indigo-500 capitalize">
+                    <tr class="border-b bg-white" v-for="server in servers" :key="server.id">
+                        <th scope="row" class="px-6 py-4 font-semibold capitalize text-indigo-500">
                             {{ server.location }}
                         </th>
-                        
+
                         <td class="px-6 py-4">
                             {{ server.hosting }}
                         </td>
-                        
+
                         <td class="px-6 py-4">
                             {{ server.ip_address }}
                         </td>
-                        
+
                         <td class="px-6 py-4">
                             {{ server.created_at }}
                         </td>
-                        
+
                         <td class="px-6 py-4">
                             <span class="font-semibold capitalize" :class="server.status === 'active' ? 'text-indigo-500' : 'text-red-600'">
                                 {{ server.status }}
                             </span>
                         </td>
-                        
+
                         <td class="px-6 py-4">
-                            <a class="px-5 py-3 font-bold text-white transition-colors ease-out rounded-lg" :class="server.status === 'active' ? 'bg-indigo-500 hover:bg-indigo-600' : 'bg-red-500 hover:bg-red-600'" href="#">Get Key</a>
+                            <a class="rounded-lg px-5 py-3 font-bold text-white transition-colors ease-out" :class="server.status === 'active' ? 'bg-indigo-500 hover:bg-indigo-600' : 'bg-red-500 hover:bg-red-600'" href="#">Get Key</a>
                         </td>
                     </tr>
                 </tbody>
@@ -81,24 +81,24 @@ const servers = [
 
         <!-- show only on mobile -->
         <div class="relative overflow-x-auto shadow-md sm:hidden sm:rounded-lg">
-            <table class="w-full text-sm text-left text-gray-500">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+            <table class="w-full text-left text-sm text-gray-500">
+                <thead class="bg-gray-50 text-xs uppercase text-gray-700">
                     <tr>
                         <th scope="col" class="px-6 py-3">Location</th>
                         <th scope="col" class="px-6 py-3 pl-3 text-center">Action</th>
                     </tr>
                 </thead>
-                
+
                 <tbody>
-                    <tr class="bg-white border-b" v-for="server in servers" :key="server.id">
+                    <tr class="border-b bg-white" v-for="server in servers" :key="server.id">
                         <th scope="row" class="inline-flex flex-col gap-y-0.5 py-4 px-6 font-semibold capitalize text-indigo-500">
                             <span>{{ server.location }}</span>
-                            
+
                             <span class="font-semibold capitalize" :class="server.status === 'active' ? 'text-indigo-500' : 'text-red-600'">
                                 {{ server.status }}
                             </span>
                         </th>
-                        
+
                         <td class="px-6 py-4 text-center">
                             <a class="rounded-lg px-3 py-2.5 font-bold text-white transition-colors ease-out" :class="server.status === 'active' ? 'bg-indigo-500 hover:bg-indigo-600' : 'bg-red-500 hover:bg-red-600'" href="#">Get Key</a>
                         </td>
