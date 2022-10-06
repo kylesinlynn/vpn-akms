@@ -1,0 +1,81 @@
+<?php
+
+namespace App\Http\Controllers\Api\Auth;
+
+use App\Http\Controllers\Controller;
+use App\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Validation\ValidationException;
+
+
+class AuthController extends Controller
+{
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => 'nullable|string|max:255',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|confirmed|min:6',
+        ]);
+
+        // if validation succeeds, create a new user
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        return response()->json([
+            'message' => 'User created successfully',
+        ], Response::HTTP_CREATED);
+    }
+
+
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+
+        // if validation succeeds, get user by email
+        $user = User::where('email', $request->email)->first();
+
+        if ($user) {
+            // validate user password
+            if (! Hash::check($request->password, $user->password)) {
+                throw ValidationException::withMessages([
+                    'password' => 'Incorrect password.',
+                ]);
+            }
+
+            // validation passed, create auth token
+            $token = $user->createToken('access_token');
+
+            return response([
+                'message' => 'Authentication Token has been generated.',
+                'token' => $token->plainTextToken,
+            ], Response::HTTP_ACCEPTED);
+        } else {
+            // if email not found
+            throw ValidationException::withMessages([
+                'email' => ['User does not exist.'],
+            ]);
+        }
+    }
+
+
+    public function logout()
+    {
+        // revoke user token
+        auth()->user()->tokens()->delete();
+
+        // return the response
+        return response([
+            'message' => 'Logged out successfully.',
+        ], Response::HTTP_ACCEPTED);
+    }
+}
