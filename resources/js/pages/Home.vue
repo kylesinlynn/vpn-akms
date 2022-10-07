@@ -1,6 +1,4 @@
 <script setup>
-import { Head } from '@inertiajs/inertia-vue3'
-
 import BaseHeader from '../components/BaseHeader.vue'
 import BaseHero from '../components/BaseHero.vue'
 import BaseFooter from '../components/BaseFooter.vue'
@@ -26,8 +24,6 @@ const servers = [
 </script>
 
 <template>
-    <Head title="Home" />
-
     <BaseHeader />
     <BaseHero />
 

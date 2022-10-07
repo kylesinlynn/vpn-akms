@@ -38,13 +38,16 @@ class ServerController extends Controller
             'location' => 'required',
             'hosting' => 'required',
             'ip' => 'required|ip',
-            'port' => 'required|min:2',
+            'port' => 'required|min:2|max:5',
             'status' => 'required',
         ]);
 
         $server = Server::create($request->all());
 
-        return response()->json(['message' => 'Server was created'], Response::HTTP_CREATED);
+        return response()->json([
+            'server' => $server,
+            'message' => 'Server was created'
+        ], Response::HTTP_CREATED);
     }
 
     /**
@@ -65,20 +68,21 @@ class ServerController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Server $server)
     {
         $request->validate([
             'location' => 'required',
             'hosting' => 'required',
             'ip' => 'required|ip',
-            'port' => 'required|min:2',
+            'port' => 'required|min:2|max:5',
             'status' => 'required',
         ]);
 
-        $server = Server::find($id);
         $server->update($request->all());
 
-        return response()->json(['message' => 'Server was updated'], Response::HTTP_ACCEPTED);
+        return response()->json([
+            'message' => 'Server was updated'
+        ], Response::HTTP_ACCEPTED);
     }
 
     /**
@@ -90,5 +94,6 @@ class ServerController extends Controller
     public function destroy(Server $server)
     {
         $server->delete();
+        return response()->noContent();
     }
 }
