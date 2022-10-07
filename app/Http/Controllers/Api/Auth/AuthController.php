@@ -3,21 +3,20 @@
 namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Controller;
-use App\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Validation\ValidationException;
-
+use Symfony\Component\HttpFoundation\Response;
 
 class AuthController extends Controller
 {
     public function register(Request $request)
     {
         $request->validate([
-            'name' => 'nullable|string|max:255',
+            'name' => 'required|min:6',
             'email' => 'required|email|unique:users',
-            'password' => 'required|confirmed|min:6',
+            'password' => 'required|min:6|confirmed'
         ]);
 
         // if validation succeeds, create a new user
@@ -46,7 +45,7 @@ class AuthController extends Controller
 
         if ($user) {
             // validate user password
-            if (! Hash::check($request->password, $user->password)) {
+            if (!Hash::check($request->password, $user->password)) {
                 throw ValidationException::withMessages([
                     'password' => 'Incorrect password.',
                 ]);
